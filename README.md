@@ -13,3 +13,7 @@ Our job is to build a clean central report system to display available informati
 Aim
 ------
 Our system will pull information from the Ordnance Survey (OS) API and return information based on key parameters related to building safety (building height, building use, and Unique Property Reference Number). The report will provide information on properties based on the location provided. 
+
+Project Timeline
+-------
+Dec 2022

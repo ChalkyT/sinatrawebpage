@@ -1,4 +1,5 @@
 # sinatrawebpage
+This is to test merging.
 
 Simulated Delivery Project - Academy Oct 2022
 =================

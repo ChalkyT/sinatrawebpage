@@ -16,4 +16,4 @@ Our system will pull information from the Ordnance Survey (OS) API and return in
 
 Project Timeline
 -------
-Dec 2022
+Dec 2022.

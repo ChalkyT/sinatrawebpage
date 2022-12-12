@@ -12,4 +12,3 @@ gem "sinatra", "~> 3.0"
 
 gem "rack-test", "~> 2.0"
 
-gem "json_pure", "~> 2.6"

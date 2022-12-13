@@ -7,3 +7,6 @@ get '/' do
     erb :index
 end
 
+def check_num_columns()
+    CSV.open('./mock_data - Sheet1.csv', 'r') { |row| row.first.size}
+end

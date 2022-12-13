@@ -14,3 +14,9 @@ describe 'seeing content on the homepage' do
     #expect(last_response.body).to eq('hello world!')
   end
 end
+
+describe 'Identify Correct Number of Columns in mock_data - Sheet1.csv' do
+  it 'returns number of columns in mock_data - Sheet1.csv as 6' do
+      expect(check_num_columns()).to eq(6)
+  end
+end

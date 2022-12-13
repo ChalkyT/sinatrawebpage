@@ -70,16 +70,27 @@
 
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">UPRN</th>
-            <th scope="col" class="govuk-table__header">Address</th>
-          </tr>
+            <th scope="col" class="govuk-table__header"><%=@api_data[0][0] %></th>
+            <th scope="col" class="govuk-table__header"><%=@api_data[0][1] %></th>
+            <th scope="col" class="govuk-table__header"><%=@api_data[0][2] %></th>
+            <th scope="col" class="govuk-table__header"><%=@api_data[0][3] %></th>
+            <th scope="col" class="govuk-table__header"><%=@api_data[0][4] %></th>
+            <th scope="col" class="govuk-table__header"><%=@api_data[0][5] %></th>
+          </tr>         
         </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">785937</th>
-          <td class="govuk-table__cell">12 The Greenings, Hotwell Rd. BS78 4TW</td>
-        </tr>
-      </tbody>
+
+        <% @api_data.drop(1).each do |data|%>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><%=data[0] %></td>
+              <td class="govuk-table__cell"><%=data[1] %></td>
+              <td class="govuk-table__cell"><%=data[2] %></td>
+              <td class="govuk-table__cell"><%=data[3] %></td>
+              <td class="govuk-table__cell"><%=data[4] %></td>
+              <td class="govuk-table__cell"><%=data[5] %></td>
+            </tr>
+          </tbody>
+        <%end %>
     </table>
 </div>
 

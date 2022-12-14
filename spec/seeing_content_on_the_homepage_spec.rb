@@ -25,4 +25,6 @@ describe 'Function for website' do
   it 'returns 100 results' do
       expect(results_counter()).to eq(100)
   end
+
+  
 end

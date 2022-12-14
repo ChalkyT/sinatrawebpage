@@ -20,3 +20,9 @@ describe 'Identify Correct Number of Columns in mock_data - Sheet1.csv' do
       expect(check_num_columns()).to eq(6)
   end
 end
+
+describe 'Function for website' do
+  it 'returns 100 results' do
+      expect(results_counter()).to eq(100)
+  end
+end

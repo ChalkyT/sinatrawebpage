@@ -80,7 +80,7 @@
                   <label class="govuk-label" for="two-thirds">
                     e.g. Essex
                   </label>
-                  <input value="<%@params[:area_name]%>" class="govuk-input govuk-!-width-two-thirds" id="area_name" name="area_name" type="text">
+                  <input value="<%=@params[:area_name]%>" class="govuk-input govuk-!-width-two-thirds" id="area_name" name="area_name" type="text">
                 </div>
                 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                   Search
@@ -96,7 +96,7 @@
           <div class="govuk-grid-column-full">
              <h2 class="govuk-heading-s">Centralised Property Data Repository</h2>
              <p class="govuk-body">If you are looking to find information related to properties in you area, simply search for it using the name of your local authority.</p>
-             <h2 class="govuk-heading-s">Search results for <%@params[:area_name]%></h2>
+             <h2 class="govuk-heading-s">Search results for <%=@params[:area_name]%></h2>
           </div>
        </div>
     </div>

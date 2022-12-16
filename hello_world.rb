@@ -2,6 +2,12 @@ require 'sinatra'
 require 'csv'
 
 
+
+
+
+
+
+
 get '/' do
 
     @api_data = CSV.read("mock_data - Sheet1.csv")
@@ -14,6 +20,40 @@ get '/' do
     erb :index
 
 end
+
+
+
+# KRYSTIAN's Code - 
+api_file = "mock_data - Sheet1.csv"
+
+get '/' do
+    @height = @params[:height].nil? ? 18 : @params[:height]
+    name= @params[:area_name]
+
+    @api_data = filter_data(@height, name, api_file)
+    
+    erb :index
+end
+
+
+
+def filter_data(height, name, api_file)
+    
+    datasheet = CSV.read(api_file)
+
+    unless name.to_s.empty?
+        datasheet.select!.with_index{|data,index| index == 0 || data[2].downcase == name.downcase} #passes us value and what the index is. Then checks if data equals our area name
+    end
+
+    unless height.to_s.empty?
+        datasheet.select!.with_index{|data,index| index == 0 || data[5].to_f >= height.to_f} #passes us value and what the index is. Then checks if data equals our area name and keeps the index 0 for titles
+    end
+    
+    return datasheet
+end
+
+# End of Krystian's Code
+
 
 def check_num_columns()
     CSV.open('./mock_data - Sheet1.csv', 'r') { |row| row.first.size}

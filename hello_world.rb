@@ -5,7 +5,7 @@ api_file = "mock_data_250 - Sheet1.csv"
 
 get '/' do
     @height = @params[:height].nil? ? 18 : @params[:height]
-    @ResultsCountNameTag = @params[:area_name].nil? ? "all properties" : @params[:area_name]
+    @ResultsCountNameTag = @params[:area_name].to_s.empty? ? "all properties" : @params[:area_name]
     
     name= @params[:area_name]
 

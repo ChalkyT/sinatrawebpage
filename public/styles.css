@@ -2273,7 +2273,7 @@
 }
 .govuk-hint
 {
-	color: whitesmoke;
+	color: #eeefef;
 	font-family: GDS Transport,arial,sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -2321,7 +2321,7 @@
 }
 .govuk-label
 {
-	color: #0b0c0c;
+	color: #eeefef;
 	display: block;
 	font-family: GDS Transport,arial,sans-serif;
 	font-size: 16px;
@@ -3104,7 +3104,7 @@
 .govuk-input
 {
 	appearance: none;
-	border: 2px solid #0b0c0c;
+	border: 2px solid #eeefef;
 	border-radius: 0;
 	box-sizing: border-box;
 	font-family: GDS Transport,arial,sans-serif;
@@ -3224,7 +3224,7 @@
 .govuk-input__prefix,.govuk-input__suffix
 {
 	background-color: #f3f2f1;
-	border: 2px solid #0b0c0c;
+	border: 2px solid #eeefef;
 	box-sizing: border-box;
 	cursor: default;
 	display: inline-block;

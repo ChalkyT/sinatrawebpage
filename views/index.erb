@@ -113,6 +113,18 @@
                   </label>
                   <input value="<%=@params[:area_name]%>" class="govuk-input govuk-!-width-two-thirds" id="area_name" name="area_name" type="text">
                 </div>
+                <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label" for="height">
+                      Minimum building height 
+                    </label>
+                  </h1>
+
+                  <div class="govuk-input__wrapper">
+                    <input value="<%=@height%>" class="govuk-input govuk-input--width-5" id="height" name="height" type="text" spellcheck="false">
+                    <div class="govuk-input__suffix" aria-hidden="true">m</div>
+                  </div>
+                </div>
                 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                   Search
                 </button>
@@ -128,19 +140,34 @@
           <div class="govuk-grid-column-full">
              <h2 class="govuk-heading-s">Centralised Property Data Repository</h2>
              <p class="govuk-body">If you are looking to find information related to properties in you area, simply search for it using the name of your local authority.</p>
-             <h2 class="govuk-heading-s">Search results for <%=@params[:area_name]%></h2>
+             <h2 class="govuk-heading-s">Search results for <%=@ResultsCountNameTag%></h2>
           </div>
        </div>
     </div>
 
-    <!--Results count from table-->
+    <!--Results count from table-->  
     <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-             <h2 class="govuk-heading-s"><%=@total_row_count %> results have been found.</h2>
-          </div>
-       </div>
-    </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-s">
+            <% case
+            when @api_data.length - 1 == 0 %>
+            No results have been found
+            <% when ((@api_data.length - 1) == 1) %>
+            1 result has been found
+            <% else %>
+            <%=@api_data.length - 1 %> results have been found
+            <% end %>
+          </h2>
+        </div>
+      </div> 
+    </div> 
+
+
+
+
+
+
 
     <!--Table-->
     <div class="govuk-width-container">

@@ -1,40 +1,18 @@
 require 'sinatra'
 require 'csv'
 
-
-
-
-
-
-
-
-get '/' do
-
-    @api_data = CSV.read("mock_data - Sheet1.csv")
-    @total_row_count = CSV.open('./mock_data - Sheet1.csv', 'r') { |row| row.count - 1}
-    
-    unless @params[:area_name].to_s.empty?
-        @api_data.select!.with_index{|data,index| index == 0 || data[2].downcase == @params[:area_name].downcase}
-    end
-
-    erb :index
-
-end
-
-
-
-# KRYSTIAN's Code - 
-api_file = "mock_data - Sheet1.csv"
+api_file = "mock_data_250 - Sheet1.csv"
 
 get '/' do
     @height = @params[:height].nil? ? 18 : @params[:height]
+    @ResultsCountNameTag = @params[:area_name].nil? ? "all properties" : @params[:area_name]
+    
     name= @params[:area_name]
 
     @api_data = filter_data(@height, name, api_file)
     
     erb :index
 end
-
 
 
 def filter_data(height, name, api_file)
